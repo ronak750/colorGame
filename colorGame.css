@@ -1,5 +1,5 @@
 body{
-	background-color: #232823;
+	background-color: #232323;
 	margin: 0;
 }
 .square{
@@ -11,6 +11,7 @@ body{
 	border-radius: 15%;
 	transition: background-color 0.4s;
 	-webkit-transition: background-color 0.4s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 1);
 }
 #container{
 	margin: 20px auto;
