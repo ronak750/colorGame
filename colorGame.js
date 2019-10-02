@@ -14,23 +14,30 @@ var sqrList=document.querySelectorAll(".square");
 
 for(var i=0;i<sqrList.length;i++)
 {
-		
-	sqrList[i].style.backgroundColor=colors[i];
+	  sqrList[i].style.backgroundColor=colors[i];
     sqrList[i].addEventListener("click", function(){
+      //will enable tile tap reset,better UX ;-)
+      if(msgDisplay.textContent==="Correct!"){
+        reset();
+      }
+      else{
         if(this.style.backgroundColor===ans)
-		{			
-			msgDisplay.textContent="Correct!";
-			changeColors(this.style.backgroundColor);
-			h1.style.backgroundColor=this.style.backgroundColor;
-			resetButton.textContent="Play Again?";
-		}	
-		else{
-			//alert("wrong!");
-			this.style.backgroundColor="#232323";
-			msgDisplay.textContent="Try Again!";
-		} 
+        {			
+          msgDisplay.textContent="Correct!";
+          changeColors(this.style.backgroundColor);
+          h1.style.backgroundColor=this.style.backgroundColor;
+          resetButton.textContent="Play Again?";
+        }	
+		    else{
+          //alert("wrong!");
+          this.style.backgroundColor="#232323";
+          this.style.boxShadow="none";
+          msgDisplay.textContent="Try Again!";
+        } 
+      }
     });
 }
+
 
 for (var i =0; i <2; i++) {
 	modeBtns[i].addEventListener("click",function(){
@@ -50,7 +57,10 @@ for (var i =0; i <2; i++) {
 function changeColors(colorString){
 
 	for(var i=0;i<sqrList.length;i++)
-		sqrList[i].style.backgroundColor=colorString;
+  {
+    sqrList[i].style.backgroundColor=colorString;
+    sqrList[i].style.boxShadow="0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 1)";
+  }
 
 }
 
