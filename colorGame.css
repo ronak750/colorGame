@@ -1,7 +1,15 @@
+
+
 body{
 	background-color: #232323;
 	margin: 0;
 }
+
+
+sample{
+ display:"none"
+}
+
 .square{
 	width: 30%;
 	background-color: rgb(260, 150, 100);
